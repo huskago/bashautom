@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=77.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bashautom"
+version = "0.1.0"
+description = "Persistent bash sessions for Python"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Huskago", email = "huskago@gmail.com" }]
+keywords = ["bash", "automation", "shell", "session", "subprocess"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: System :: Shells",
+    "License :: OSI Approved :: MIT License",
+]
+
+[project.urls]
+Repository = "https://github.com/huskago/bashautom"
+Documentation = "https://github.com/huskago/bashautom#readme"
+Issues = "https://github.com/huskago/bashautom/issues"
+Changelog = "https://github.com/huskago/bashautom/blob/main/CHANGELOG.md"
