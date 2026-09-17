@@ -14,3 +14,9 @@ jobs:
       - run: pip install -e .
       - run: pip install pytest
       - run: pytest
+  Tests:
+    runs-on: ubuntu-latest
+    needs: test
+    if: always()
+    steps:
+      - run: '[ "${{ needs.test.result }}" = "success" ]'
