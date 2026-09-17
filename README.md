@@ -1,5 +1,11 @@
 # bashautom
 
+[![PyPI version](https://img.shields.io/pypi/v/bashautom.svg)](https://pypi.org/project/bashautom/)
+[![Python versions](https://img.shields.io/pypi/pyversions/bashautom.svg)](https://pypi.org/project/bashautom/)
+[![Downloads](https://static.pepy.tech/badge/bashautom)](https://pepy.tech/project/bashautom)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Tests](https://github.com/huskago/bashautom/actions/workflows/tests.yml/badge.svg)](https://github.com/huskago/bashautom/actions/workflows/tests.yml)
+
 Persistent bash sessions for Python.
 
 Unlike `subprocess.run()` which spawns a new process every time, bashautom keeps a `/bin/bash` process alive so state (env vars, cwd, etc.) persists across commands.
@@ -13,6 +19,12 @@ with Session() as s:
     s.execute("export BUILD_ID=42")
     result = s.execute("make build")
 ```
+
+## Why not just subprocess / pexpect?
+
+`subprocess.run()` spawns a brand new shell for every call, no memory of `cd`, exported vars, or sourced files between commands. `pexpect` solves persistence but is built around interactive prompt-matching, which is overkill (and fragile) when you just want to run commands and get clean results back.
+
+bashautom keeps one real `/bin/bash` process alive and gives you structured results (`stdout`, `exit_code`, `success`, `duration`) for each command, with timeouts and streaming built in, without you writing any expect-style pattern matching.
 
 ## Install
 
