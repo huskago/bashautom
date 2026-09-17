@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.2 (2026-09-17)
+
+- add badges (PyPI version, downloads, Python versions, license, tests)
+- add "Why not just subprocess / pexpect?" section to README
+- add CONTRIBUTING.md
+- add issue template
+- improve PyPI metadata (keywords, classifiers)
+
 ## 0.1.1 (2026-02-21)
 
 - add test suite
